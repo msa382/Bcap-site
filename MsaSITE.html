@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ballerina Cappucina (BCAP) - The Crypto Memecoin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background: #0e0e0e;
+      color: #00ffcc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      background-image: url('https://www.transparenttextures.com/patterns/tv-snow.png');
+      animation: glitch 2s infinite linear;
+    }
+    @keyframes glitch {
+      0% { background-color: #0e0e0e; }
+      50% { background-color: #ff00ff; }
+      100% { background-color: #0e0e0e; }
+    }
+    header {
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #ff00ff;
+      text-shadow: 2px 2px 0 #000;
+      animation: glitch-text 1s infinite;
+    }
+    @keyframes glitch-text {
+      0% { text-shadow: 2px 2px 0 #ff00ff; }
+      50% { text-shadow: 2px 2px 0 #00ffcc; }
+      100% { text-shadow: 2px 2px 0 #ff00ff; }
+    }
+    .slogan {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ffffffcc;
+    }
+    a.button {
+      background: #ff00ff;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff00ff;
+      transition: 0.3s ease-in-out;
+    }
+    a.button:hover {
+      background: #00ffcc;
+      transform: scale(1.1);
+    }
+    section {
+      max-width: 600px;
+      margin: 2rem;
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #00ffcc44;
+      position: relative;
+      overflow: hidden;
+    }
+    .easter-egg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      color: #ff00ff;
+      visibility: hidden;
+      z-index: 10;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    #counter {
+      font-size: 2rem;
+      color: #ff00ff;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ballerina Cappucina (BCAP)</h1>
+    <p class="slogan">The memecoin that explodes like a retro TV!</p>
+    <a class="button" href="https://pump.fun/coin/2kKWzXAmGLYxLSgYYRGBazK1xN77ieRvjH4piSRopump">Buy BCAP Now</a>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p>
+      Ballerina Cappucina is a fun and energetic memecoin on the Solana blockchain, drawing inspiration from the classic retro TV aesthetic and wild crypto culture. It's all about the vibe – no promises, just fun!
+    </p>
+    <div class="easter-egg" id="easterEgg">🐶 HODL the line like a true crypto ballerina! 🩰</div>
+  </section>
+
+  <section>
+    <h2>Token Info</h2>
+    <p><strong>Name:</strong> Ballerina Cappucina</p>
+    <p><strong>Ticker:</strong> BCAP</p>
+    <p><strong>Contract Address:</strong><br>2kKWzXAmGLYxLSgYYRGBazK1xN77ieRvjH4piSRopump</p>
+    <p><strong>Network:</strong> Solana</p>
+  </section>
+
+  <section>
+    <h2>Crypto Easter Egg Challenge</h2>
+    <p>Click the 'Buy BCAP Now' button 5 times quickly to unlock the Easter Egg!</p>
+  </section>
+
+  <section>
+    <h2>Sales Counter</h2>
+    <p id="counter">Transactions: 0</p>
+  </section>
+
+  <footer>
+    Created by Misha / LobileTV - Not financial advice, just fun. Powered by BCAP!
+  </footer>
+
+  <script>
+    let clickCount = 0;
+    const button = document.querySelector('.button');
+    const easterEgg = document.getElementById('easterEgg');
+    const counter = document.getElementById('counter');
+    
+    button.addEventListener('click', () => {
+      clickCount++;
+      if (clickCount === 5) {
+        easterEgg.style.visibility = 'visible';
+        setTimeout(() => {
+          easterEgg.style.visibility = 'hidden';
+        }, 3000);
+      }
+    });
+
+    let transactionCount = 0;
+    setInterval(() => {
+      transactionCount++;
+      counter.textContent = `Transactions: ${transactionCount}`;
+    }, 1000);
+  </script>
+</body>
+</html>
